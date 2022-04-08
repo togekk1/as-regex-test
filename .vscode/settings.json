@@ -1,0 +1,11 @@
+{
+  "runOnSave.commands": [
+    {
+      "globMatch": "**/assembly/*.ts",
+      "command": "yarn asc ${file} --target debug -o public/build/${fileBasenameNoExtension}.untouched.wasm --enable reference-types --bindings esm",
+      "runIn": "backend",
+      "runningStatusMessage": "Compiling ${fileBasename}",
+      "finishStatusMessage": "${fileBasename} compiled"
+    }
+  ]
+}

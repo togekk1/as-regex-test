@@ -1,5 +1,6 @@
-import { wasm_init } from "./wasm-init";
+import { main, set_dom } from "../public/build/index.untouched";
 
 (async () => {
-  console.log(await wasm_init());
+  main();
+  console.log(set_dom());
 })();

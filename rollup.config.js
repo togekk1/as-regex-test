@@ -46,7 +46,7 @@ const indexTemplate = `
         var process = { env: {<<process-env-status>>} };
       }
     </script>
-    <script defer src="./build/bundle.js"></script>
+    <script defer src="./build/bundle.js" type="module"></script>
   </head>
 
   <body>
@@ -130,7 +130,7 @@ export default {
   input: "src/index.ts",
   output: {
     sourcemap: !production,
-    format: "iife",
+    format: "es",
     name: "app",
     file: "public/build/bundle.js",
   },

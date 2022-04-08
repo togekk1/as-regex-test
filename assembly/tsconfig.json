@@ -1,6 +1,4 @@
 {
-  "extends": "../.yarn/cache/assemblyscript-npm-0.19.23-d726685734-f5a5d808cc.zip/node_modules/assemblyscript/std/assembly.json",
-  "include": [
-    "./**/*.ts"
-  ]
+  "extends": "../node_modules/assemblyscript/std/assembly.json",
+  "include": ["./**/*.ts"]
 }

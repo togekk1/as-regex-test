@@ -5,13 +5,6 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@assemblyscript/loader@npm:^0.19.23":
-  version: 0.19.23
-  resolution: "@assemblyscript/loader@npm:0.19.23"
-  checksum: 38b693ebedca8257bc3fc50ce5dd4f301e7c263ccf3b6239e758f1e2347ca032f040bbec38e4124f3ec90d391f39ac5d56f79fd07efc0267b57f3ab25f7c58c3
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:7.12.11":
   version: 7.12.11
   resolution: "@babel/code-frame@npm:7.12.11"
@@ -128,9 +121,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/plugin-commonjs@npm:^21.0.2":
-  version: 21.0.2
-  resolution: "@rollup/plugin-commonjs@npm:21.0.2"
+"@rollup/plugin-commonjs@npm:^21.0.3":
+  version: 21.0.3
+  resolution: "@rollup/plugin-commonjs@npm:21.0.3"
   dependencies:
     "@rollup/pluginutils": ^3.1.0
     commondir: ^1.0.1
@@ -141,7 +134,7 @@ __metadata:
     resolve: ^1.17.0
   peerDependencies:
     rollup: ^2.38.3
-  checksum: 5fd4c7b75d7881070f4395d7ba5f9035934f53b25e92d136583cc794461a456efc1e2a2204f946ec567dfea58073c38cb48f24d27155b89af0df0447c2cd0758
+  checksum: 23307d3b7eb8d64dd966fbe380b85bf3b5f4908c7344427d45918d570cf6b48710ef6f155bea74545127c10de9d64f87dd2219078e83dbccf927505d38774de8
   languageName: node
   linkType: hard
 
@@ -407,33 +400,39 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "as-regex-test@workspace:."
   dependencies:
-    "@assemblyscript/loader": ^0.19.23
     "@rollup/plugin-alias": ^3.1.9
-    "@rollup/plugin-commonjs": ^21.0.2
+    "@rollup/plugin-commonjs": ^21.0.3
     "@rollup/plugin-eslint": ^8.0.1
     "@rollup/plugin-node-resolve": ^13.1.3
     "@rollup/plugin-typescript": ^8.3.1
-    assemblyscript: ^0.19.23
-    rollup: ^2.69.1
+    assemblyscript: ^0.20.3
+    assemblyscript-regex: ^1.6.4
+    rollup: ^2.70.1
     rollup-plugin-livereload: ^2.0.5
     rollup-plugin-terser: ^7.0.2
     sirv-cli: ^2.0.2
     tslib: ^2.3.1
-    typescript: ^4.6.2
+    typescript: ^4.6.3
   languageName: unknown
   linkType: soft
 
-"assemblyscript@npm:^0.19.23":
-  version: 0.19.23
-  resolution: "assemblyscript@npm:0.19.23"
+"assemblyscript-regex@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "assemblyscript-regex@npm:1.6.4"
+  checksum: 04e5058cf5182cf13673c69b6fe23fa28129b99923d30de54c55d4b7872ed9f906eb63f800e660b848235b204bb21dd308b726b1e2e07974288c01c619c27ae8
+  languageName: node
+  linkType: hard
+
+"assemblyscript@npm:^0.20.3":
+  version: 0.20.3
+  resolution: "assemblyscript@npm:0.20.3"
   dependencies:
-    binaryen: 102.0.0-nightly.20211028
+    binaryen: 106.0.0-nightly.20220320
     long: ^5.2.0
-    source-map-support: ^0.5.20
   bin:
-    asc: bin/asc
-    asinit: bin/asinit
-  checksum: f5a5d808ccf5a5f5065c9690f67b74e8ab434d30c9dda688acaab92416ee296cdcae4b7a272ce1abd416e1e37e44aee61588713882c2638af037cf83c2ee933b
+    asc: bin/asc.js
+    asinit: bin/asinit.js
+  checksum: 50cde12b5ac25b50c41c14a241688651f1b7d6c0dcbbc6cb45abacfbc9f088122c00701a2c88798d8e59004a411ac135d0be66669044678742c6fa0d349f3916
   languageName: node
   linkType: hard
 
@@ -458,12 +457,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"binaryen@npm:102.0.0-nightly.20211028":
-  version: 102.0.0-nightly.20211028
-  resolution: "binaryen@npm:102.0.0-nightly.20211028"
+"binaryen@npm:106.0.0-nightly.20220320":
+  version: 106.0.0-nightly.20220320
+  resolution: "binaryen@npm:106.0.0-nightly.20220320"
   bin:
     wasm-opt: bin/wasm-opt
-  checksum: d360de0f21e35b73e868837278161ae0d3ccca4a2f87bd02c1cf28750ab355e3469a6a56664ca078f3ed5c2baade6575871b63cc61c9f98f101e55fbbe4ff024
+    wasm2js: bin/wasm2js
+  checksum: f6a48951e5413243e9de453520c9d037538261d47b9b708a5b8ef7ec9160ab5e79c91181da0db8da7f8741452ed46160a32b98baf5a57430fc7d83f90d911b5f
   languageName: node
   linkType: hard
 
@@ -1901,9 +1901,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup@npm:^2.69.1":
-  version: 2.69.1
-  resolution: "rollup@npm:2.69.1"
+"rollup@npm:^2.70.1":
+  version: 2.70.1
+  resolution: "rollup@npm:2.70.1"
   dependencies:
     fsevents: ~2.3.2
   dependenciesMeta:
@@ -1911,7 +1911,7 @@ __metadata:
       optional: true
   bin:
     rollup: dist/bin/rollup
-  checksum: dc9b21b0ecfdbb5811b2110e80866f60420ffcd744faf38d58117f1c3ac2660d553196d2c4c343a9f9d67b5e83c23d4a3c6050524ae1b4159b8530f2593f2c07
+  checksum: 06c62933e6e81a1c8c684d7d576e507081aabdb63cc0c91bca86b7348b66df03b77827068e4990b8b6c738bd3ef66dcc8c7ed7e0ea40b736068e7618f693133e
   languageName: node
   linkType: hard
 
@@ -2070,7 +2070,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.20, source-map-support@npm:~0.5.20":
+"source-map-support@npm:~0.5.20":
   version: 0.5.21
   resolution: "source-map-support@npm:0.5.21"
   dependencies:
@@ -2272,23 +2272,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.2":
-  version: 4.6.2
-  resolution: "typescript@npm:4.6.2"
+"typescript@npm:^4.6.3":
+  version: 4.6.3
+  resolution: "typescript@npm:4.6.3"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.2#~builtin<compat/typescript>":
-  version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=bda367"
+"typescript@patch:typescript@^4.6.3#~builtin<compat/typescript>":
+  version: 4.6.3
+  resolution: "typescript@patch:typescript@npm%3A4.6.3#~builtin<compat/typescript>::version=4.6.3&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 40b493a71747fb89fa70df104e2c4a5e284b43750af5bea024090a5261cefa387f7a9372411b13030f7bf5555cee4275443d08805642ae5c74ef76740854a4c7
+  checksum: 6bf45caf847062420592e711bc9c28bf5f9a9a7fa8245343b81493e4ededae33f1774009d1234d911422d1646a2c839f44e1a23ecb111b40a60ac2ea4c1482a8
   languageName: node
   linkType: hard
 
