@@ -1,19 +1,32 @@
-// The entry file of your WebAssembly module.
+import { fetch } from "./namespaces/fetch";
+import { document } from "./namespaces/document";
+import { dom } from "./namespaces/dom";
 
-import { RegExp } from "assemblyscript-regex/assembly";
-import { document } from "assemblyscript/std/assembly/bindings/dom";
-
-class plain_object {
+class Response {
   name: string;
   age: i32;
+  country: string;
 }
 
 export function main(): void {
-  const regex = new RegExp(",", "g");
-  const str = "table football foul";
-  console.log(`${regex.test(str)}`);
+  fetch("assets/test");
 }
 
-export function set_dom(): externref {
-  return document.getElementById("app");
+export function callback(response: StaticArray<Response>): void {
+  // const b = document.getElementById("app");
+  const b = dom.createDocumentFragment();
+  const appendChild = dom.appendChild;
+
+  for (let i = 0; i < response.length; i++) {
+    const createTextNode = document.createTextNode;
+    const createElement = document.createElement;
+    appendChild(b, createTextNode(response[i].name));
+    appendChild(b, createElement("br"));
+    appendChild(b, createTextNode(`${response[i].age}`));
+    appendChild(b, createElement("br"));
+    appendChild(b, createTextNode(response[i].country));
+    appendChild(b, createElement("br"));
+  }
+
+  appendChild(document.getElementById("app"), b);
 }
