@@ -5,8 +5,9 @@
       "textFile": "public/build/index.untouched.wat",
       "sourceMap": true,
       "debug": true,
-      "bindings": "raw",
+      "bindings": "esm",
       "exportRuntime": true,
+      "exportTable":true,
       "enable": ["reference-types"]
     },
     "release": {
@@ -16,8 +17,9 @@
       "shrinkLevel": 0,
       "converge": false,
       "noAssert": false,
-      "bindings": "raw",
+      "bindings": "esm",
       "exportRuntime": true,
+      "exportTable":true,
       "enable": ["reference-types"]
     }
   },

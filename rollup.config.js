@@ -30,14 +30,7 @@ const indexTemplate = `
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" sizes="76x76" href="./apple-icon.png" />
-    <link rel="stylesheet" href="./build/bundle.css" />
-    <link
-      rel="stylesheet"
-      href="./assets/vendor/@fortawesome/fontawesome-free/css/all.min.css"
-    />
+  
     <link rel="stylesheet" href="./assets/styles/index.css" />
     <title>Test</title>
 
